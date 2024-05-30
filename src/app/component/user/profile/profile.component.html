@@ -1,0 +1,56 @@
+<app-navbar></app-navbar>
+<div class="content">
+    <div class="title">Hồ Sơ</div>
+    <div class="row">
+        <div class="col-4 avatar">
+            <img [src]="userDetail.avatar" alt="User Avatar">
+        </div>
+
+        <div class="col-8 fullname-mail">
+            <h1>{{userDetail.fullname}}</h1>
+            <label for="">
+                <i class="fa fa-envelope" style="width: 16px ;height: 12px; margin-right: 36px; "></i>
+                {{userDetail.email}}
+            </label>
+        </div>
+    </div>
+    <div class="row field_title">
+        <div class="col-3">Họ Và Tên</div>
+        <div class="col-7 input_field">
+            <input type="text" [(ngModel)]="userDetail.fullname" name="" id="" class="input_field_name">
+        </div>
+    </div>
+    <div class="row field_title">
+        <div class="col-3">Email</div>
+        <div class="col-7 input_field">
+            <input class="input_field_email" [(ngModel)]="userDetail.email" type="text" readonly>
+        </div>
+    </div>
+
+    <div class="row field_title">
+        <div class="col-3">Sinh Nhật</div>
+        <div class="col-7 input_field">
+            <div class="input-container">
+                <input type="date" name="" id="" [(ngModel)]="userDetail.dateOfBirth" class="input_field_date"
+                    placeholder="--yyyy/mm/dd">
+            </div>
+        </div>
+    </div>
+    
+    <div class="row field_title">
+        <div class="col-3">Giới Tính</div>
+        <div class="col-7 input_field">
+            <select style="padding-left: 20px;" name="" id="" class="select_sex" [(ngModel)]="userDetail.sex">
+                <option value="null" disabled selected hidden>-- Giới Tính --</option>
+                <option value="1">Nam</option>
+                <option value="2">Nữ</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="button_save">
+        <button (click)="updateProfile()">Save</button>
+    </div>
+
+
+</div>  

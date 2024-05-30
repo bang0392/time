@@ -1,0 +1,28 @@
+<div>
+    <app-navbar (toggleMenuEvent)="handleToggleMenuEvent()"></app-navbar>
+</div>
+<div>
+    <div>
+        <div class="menu-setting" [ngClass]="{'collapsed': isMenuCollapsed}">
+            <div class="title-text">Notification</div>
+        </div>
+    </div>
+
+    <div class="row content" [ngClass]="{'collapsed': isMenuCollapsed}">
+        <div class=" notification_content">
+            <div class="col-11">
+                <div class="notification_title">
+                    Tiêu đề
+                </div>
+                <div class="notification_data">
+                    Nội dung
+                </div>
+            </div>
+            <div class="col-1 icon_unread">
+                <div class="unred">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<body>
+  <div>
+    <app-navbar (toggleMenuEvent)="handleToggleMenuEvent()"
+      (timetableClicked)="onTimetableIdSelected($event)"></app-navbar>
+  </div>
+  <img src="../../../assets/Zoom-icon.png" class="zoom-btn" [ngClass]="{'collapsed': isMenuCollapsed}">
+
+  <img src="../../../assets/Add-event-btn.png" (click)="addEvent()" class="btn-add-event">
+
+  <div class="calendar-toolbar-background"></div>
+  <div class="calendar-header-cover"></div>
+
+  <div class="calendar" style="margin-top: 90px; margin-left: 250px" [ngClass]="{'collapsed': isMenuCollapsed}">
+    <ejs-schedule width='100%' height=auto [selectedDate]="selectedDate" (popupOpen)="emptyAttributes()"
+      [eventSettings]="eventSettings" (cellClick)="onCellDoubleClick($event)" (eventClick)="addEvent()"
+      (eventRendered)="onEventRendered($event)"></ejs-schedule>
+  </div>
+</body>

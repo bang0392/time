@@ -1,0 +1,99 @@
+<div style="width: 535px; max-height: 93%; background: white; border-radius: 20px" id="event-details-container"
+  class="event-details-overlay">
+
+  <div class="box">
+    <div class="group">
+      <div class="overlap-group">
+
+
+        <div class="row">
+          <div class="col-1" (click)="close()">
+            <img class="arrow-left" style="width: 14px;height: 14px;margin-top: 20px;"
+              src="../../../assets/icon_close.jpg" />
+          </div>
+          <div class="col-5">
+            <div class="text-wrapper">
+              Thêm thời khóa biểu
+            </div>
+          </div>
+          <div class="col-6" style="margin-left: 430px; margin-top: 20px;">
+
+            <button class="col-lg-5 btn btn-success" type="button" (click)="saveTimeTable()">
+              {{ "Lưu" | translate }}
+            </button>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="div1">
+    <br>
+    <div class="overlap-group">
+
+      <input [(ngModel)]="name" type="text" class="form-control" id="name" placeholder="Tên thời khóa biểu" />
+
+    </div>
+
+    <br />
+    <div class="overlap-group">
+
+
+      <div class="row">
+        <div class="col-1">
+          <img class="icon-clock" src="../../../assets/icon-clock.png" />
+        </div>
+        <div class="col-4">
+          <label class="date-text" for="fromTime">{{ "Bắt đầu & Kết thúc" | translate }}</label>
+          <span style="color: red"> *</span>
+        </div>
+      </div>
+      <br>
+
+      <input [(ngModel)]="fromTime" (ngModelChange)="validateFromTime()" style="font-style: 14px;" type="datetime-local"
+        class="form-control" id="fromTime" placeholder="date" />
+      <div *ngIf="!fromTimeValid" class="erTitle">
+        Ngày bắt đầu không thể nhỏ hơn ngày hiện tại.
+      </div>
+
+    </div>
+    <br />
+    <div class="overlap-group">
+      <input [(ngModel)]="toTime" (ngModelChange)="validateFromTime()" type="datetime-local" class="form-control"
+        id="toTime" placeholder="date" />
+      <div *ngIf="!toTimeValid" class="erTitle">
+        Thời gian kết thúc phải lớn hơn ngày hiện tại.
+      </div>
+
+    </div>
+    <br>
+    <div class="overlap-group">
+      <label class="" style="font-size: 14px;font-weight: bold;" for="description">{{ "Chọn màu" | translate
+        }}</label>
+      <span style="color: red"> *</span>
+
+      <div *ngIf="isColorPickerVisible" class="color-picker">
+        <div *ngFor="let color of colorList" class="color-square" [style.background]="color"
+          [ngClass]="{'selected-border': color === selectedColor}" (click)="selectColor(color)">
+        </div>
+      </div>
+
+      <!-- Display the selected color -->
+      <div *ngIf="selectedColor" [style.background]="selectedColor" class="selected-color"></div>
+
+    </div>
+
+    <br>
+    <div class="overlap-group">
+      <label style="font-weight: bold;font-size: 14px;" for="description">{{ "Mô tả" | translate }}</label>
+      <span style="color: red"> *</span>
+      <input style="height: 88px" [(ngModel)]="description" type="text" class="form-control" id="description"
+        placeholder="Thêm nội dung mô tả" />
+    </div>
+
+
+  </div>
+</div>

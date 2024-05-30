@@ -1,0 +1,32 @@
+/* Todo code css log view timeTable */
+.mat-typography{
+
+  background-color: #E3E3E3;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+.icon_show{
+
+ width: 20px;
+ height: 22px;
+ margin-right: 10px;
+ margin-top: 8px;
+
+}
+
+.row{
+
+ width: 142.3px;
+ height: 40px;
+ border-radius: 7px 7px 7px;
+ background-color: #FFFFFF;
+ margin-bottom: 5px;
+}
+
+.text_show{
+
+font-family: Pitagon Sans Text;
+color: #000000;
+font-size: 15px;
+
+}

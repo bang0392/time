@@ -1,0 +1,111 @@
+<body class="row">
+  <div class="col-2">
+    <app-navbar (toggleMenuEvent)="handleToggleMenuEvent()"></app-navbar>
+  </div>
+  <div class="col-10" [ngClass]="{'collapsed': isMenuCollapsed}">
+    <div class="row">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-1" [ngClass]="{'collapsed': isMenuCollapsed}"></div>
+          <div class="col-10 content">
+            <div class="row">
+              <div class="col-12 field_title"><b>{{ 'Ngon_ngu_va_khu_vuc' | translate }}</b></div>
+              <div class="col-12" style="margin-top: 15px;" (click)="toggleDropdown1()" (click)="toggleArrow1()">
+                <div class="ngon-ngu-cbb">
+                  <div class="cbb-layout">
+                    <div class="label-layout">
+                      <div class="label">
+                        <b>{{ 'Ngon_ngu' | translate }}</b>
+                      </div>
+                    </div>
+                    <div class="centered-character arrow1-container">
+                      <img class="arrow1" src="../../../assets/icondropdown.png"
+                        style="width: 35px; height: 35px; margin-top: 20px;">
+                    </div>
+                    <div>
+                      <div class="selected-option">
+                        <div *ngIf="lang === 'vi'" style="margin-left: 15px;">{{ 'Tieng_viet' | translate }}</div>
+                        <div *ngIf="lang === 'en'" style="margin-left: 15px;">{{ 'Tieng_anh' | translate }}</div>
+                      </div>
+                      <div class="dropdown-list" *ngIf="dropdownOpen1">
+                        <div class="danh-sach-quoc-gia">
+                          <div *ngFor="let format of formats" (click)="selectLanguage(format)" (click)="toggleArrow1()" style="height: 34px;padding-top: 5px;padding-left: 14px;">
+                            <span *ngIf="format === 'vi'" >{{
+                              'Tieng_viet' | translate }}</span>
+                            <span *ngIf="format === 'en'">{{
+                              'Tieng_anh' | translate }}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12" style="margin-top: 15px;" (click)="toggleDropdown()" (click)="toggleArrow()">
+                <div class="ngon-ngu-cbb">
+                  <div class="cbb-layout">
+                    <div class="label-layout">
+                      <div class="label">
+                        <b>{{ 'COUNTRY' | translate }}</b>
+                      </div>
+                    </div>
+                    <div class="centered-character arrow-container">
+                      <img class="arrow" src="../../../assets/icondropdown.png"
+                        style="width: 35px; height: 35px; margin-top: 20px;">
+                    </div>
+                    <div>
+                      <div class="selected-option">
+                        <div style="margin-left: 15px;">{{ 'Tieng_viet' | translate }}</div>
+                      </div>
+                      <div class="dropdown-list" *ngIf="dropdownOpen">
+                        <input type="text" class="search-input" [(ngModel)]="searchText" placeholder="  Tìm kiếm quốc gia"
+                          style="width: 100%;" (click)="nganChanSuKien($event)">
+                        <div class="danh-sach-quoc-gia">
+                          <div (click)="toggleArrow()" style="height: 34px;padding-top: 5px;padding-left: 14px;">
+                            <span>{{
+                              'Tieng_viet' | translate }}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12" style="margin-top: 15px;" (click)="toggleDropdown2()" (click)="toggleArrow2()">
+                <div class="ngon-ngu-cbb">
+                  <div class="cbb-layout">
+                    <div class="label-layout">
+                      <div class="label">
+                        <b>{{ 'TIMEZONE' | translate }}</b>
+                      </div>
+                    </div>
+                    <div class="centered-character arrow1-container">
+                      <img class="arrow2" src="../../../assets/icondropdown.png"
+                        style="width: 35px; height: 35px; margin-top: 20px;">
+                    </div>
+                    <div>
+                      <div class="selected-option">
+                        <div style="margin-left: 15px;">GMT+7</div>
+                      </div>
+                      <div class="dropdown-list" *ngIf="dropdownOpen2">
+                        <div class="danh-sach-quoc-gia">
+                          <div (click)="toggleArrow2()" style="height: 34px;padding-top: 5px;padding-left: 14px;">
+                            <span>GMT+7</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-1"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

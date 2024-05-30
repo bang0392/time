@@ -1,0 +1,243 @@
+ejs-schedule {
+  border: none !important;
+}
+
+body>div:nth-child(8) {
+  display: none;
+}
+
+body>div.calendar>ejs-schedule>div.e-quick-popup-wrapper.e-lib.e-popup.e-control.e-popup-open {
+  display: none !important;
+}
+
+body>div.calendar>ejs-schedule>div.e-schedule-toolbar-container>div.e-header-popup.e-lib.e-popup.e-control.e-popup-open {
+  display: none !important;
+}
+
+#e-tbr-btn_3>span.e-tbar-btn-text::before {
+  content: "Hôm nay" !important;
+}
+
+#e-tbr-btn_3>span.e-tbar-btn-text {
+  content: "" !important;
+}
+
+/*Custom Current Date Header*/
+ejs-schedule>div.e-table-container>div>table>tbody>tr:nth-child(1)>td:nth-child(2)>div>div>table>tbody>tr.e-header-row>td.e-header-cells.e-current-day {
+  color: black;
+}
+
+ejs-schedule>div.e-table-container>div>table>tbody>tr:nth-child(1)>td:nth-child(2)>div>div>table>tbody>tr.e-header-row>td.e-header-cells.e-current-day>div.e-header-date.e-navigate {
+  background-color: #43AA47;
+  color: white;
+  align-content: center;
+  text-align: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 44px;
+  gap: 10px;
+  margin-left: 37%;
+}
+
+#_dialog_wrapper,
+body>div.e-dlg-container.e-schedule-dialog.e-dlg-center-center.e-schedule-dialog-container>div.e-dlg-overlay,
+body>div.e-dlg-container.e-schedule-dialog.e-dlg-center-center.e-schedule-dialog-container {
+  display: none !important;
+  z-index: 0 !important;
+}
+
+/*-------------------------------------*/
+
+/*Custom Header*/
+.e-schedule .e-vertical-view .e-date-header-wrap table tbody td {
+  border-left: none !important;
+}
+
+.e-schedule .e-vertical-view .e-header-cells .e-header-day {
+  margin-left: 38%;
+  color: #000;
+  text-align: center;
+  font-family: "Pitagon Sans Text";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.e-schedule .e-vertical-view .e-header-cells .e-header-date {
+  margin-left: 39.5%;
+  color: #000;
+  text-align: center;
+  font-family: "Pitagon Sans Text";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.e-schedule .e-vertical-view .e-left-indent-wrap table tbody td {
+  border-right: 0px !important;
+}
+
+body>div.calendar>ejs-schedule>div.e-table-container>div>table>tbody>tr:nth-child(1)>td:nth-child(2)>div {
+  position: fixed;
+  top: 135px;
+  z-index: 40;
+}
+
+/*-------------------------------------*/
+
+/*Custom toolbar*/
+body>div.calendar>ejs-schedule>div.e-schedule-toolbar-container>div>div>div.e-toolbar-right>div.e-toolbar-item.e-schedule-seperator.e-separator,
+body>div.calendar>ejs-schedule>div.e-schedule-toolbar-container>div>div>div.e-toolbar-right>div.e-toolbar-item.e-views.e-day,
+body>div.calendar>ejs-schedule>div.e-schedule-toolbar-container>div>div>div.e-toolbar-right>div.e-toolbar-item.e-views.e-week.e-active-view,
+body>div.calendar>ejs-schedule>div.e-schedule-toolbar-container>div>div>div.e-toolbar-right>div.e-toolbar-item.e-views.e-week.e-active-view,
+body>div.calendar>ejs-schedule>div.e-schedule-toolbar-container>div>div>div.e-toolbar-right>div.e-toolbar-item.e-views.e-work-week,
+body>div.calendar>ejs-schedule>div.e-schedule-toolbar-container>div>div>div.e-toolbar-right>div.e-toolbar-item.e-views.e-month,
+body>div.calendar>ejs-schedule>div.e-schedule-toolbar-container>div>div>div.e-toolbar-right>div.e-toolbar-item.e-views.e-agenda {
+  display: none !important;
+}
+
+body>div.calendar>ejs-schedule>div.e-schedule-toolbar-container>div.e-schedule-toolbar.e-control.e-toolbar.e-lib.e-toolpop.e-keyboard>div {
+  background-color: white;
+  position: fixed;
+  z-index: 40;
+}
+
+body>div.calendar>ejs-schedule>div.e-schedule-toolbar-container>div {
+  background-color: white;
+}
+
+body>div.calendar>ejs-schedule>div.e-schedule-toolbar-container>div.e-schedule-toolbar.e-control.e-toolbar.e-lib.e-toolpop.e-keyboard>div>div.e-toolbar-left {
+  margin-left: 220px;
+}
+
+body>div.calendar>ejs-schedule>div.e-schedule-toolbar-container>div>div>div.e-toolbar-center {
+  display: none !important;
+}
+
+body>div.calendar>ejs-schedule>div.e-schedule-toolbar-container>div>div>div.e-toolbar-right {
+  position: absolute !important;
+  z-index: 30;
+  top: 1px !important;
+  left: 100px !important;
+}
+
+#e-tbr-btn_3 {
+  position: absolute !important;
+  z-index: 30;
+  display: flex;
+  background-color: white;
+  width: 108px !important;
+  height: 44px;
+  padding: 0px 5px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  border: 1px solid #D1D4D9;
+}
+
+.e-toolbar .e-toolbar-item .e-tbar-btn {
+  background-color: white !important;
+}
+
+.e-schedule .e-schedule-toolbar {
+  box-shadow: none !important;
+}
+
+.e-schedule .e-schedule-toolbar .e-toolbar-items .e-toolbar-item.e-prev .e-icon-prev,
+.e-schedule .e-schedule-toolbar .e-toolbar-items .e-toolbar-item.e-next .e-icon-next {
+  font-size: 20px !important;
+}
+
+.e-toolbar .e-toolbar-item:not(.e-separator) {
+  margin-left: 5px !important;
+}
+
+#e-tbr-btn_2>span.e-tbar-btn-text {
+  color: #4E4E4E;
+  font-family: "Pitagon Sans Text";
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+#e-tbr-btn_2>span.e-btn-icon.e-icon-down-arrow.e-icons.e-icon-right {
+  display: none;
+}
+
+/*-------------------------------------*/
+
+/*Custom Calendar body*/
+.e-schedule .e-vertical-view .e-work-cells {
+  background-color: white !important;
+  border-right: 1px solid #EEE !important;
+  border-bottom: 1px solid #EEE !important;
+  height: 59px !important;
+}
+
+.e-schedule .e-vertical-view .e-time-cells-wrap table td {
+  height: 59px !important;
+}
+
+.e-schedule .e-vertical-view .e-alternate-cells {
+  border-bottom-style: none !important;
+  background-color: white;
+}
+
+.e-schedule .e-vertical-view .e-alternate-cells:hover {
+  background-color: white !important;
+}
+
+.e-schedule .e-vertical-view .e-previous-timeline,
+.e-schedule .e-vertical-view .e-current-timeline,
+.e-schedule .e-vertical-view .e-clone-time-indicator,
+.e-schedule .e-vertical-view .e-current-time {
+  display: none;
+}
+
+#e-tbr-btn_5 {
+  margin-left: 1100px;
+}
+
+#_nav {
+  display: none;
+}
+
+/*-------------------------------------*/
+
+/*Custom Event display */
+.e-schedule .e-vertical-view .e-day-wrapper .e-appointment:not(.e-schedule-event-clone) {
+  border-radius: 10px;
+}
+
+.e-schedule .e-vertical-view .e-day-wrapper .e-appointment .e-recurrence-icon,
+.e-schedule .e-vertical-view .e-day-wrapper .e-appointment .e-recurrence-edit-icon {
+  display: none !important;
+}
+
+.e-schedule .e-vertical-view .e-day-wrapper .e-appointment .e-subject {
+  margin-top: 10px;
+  margin-left: 16px !important;
+  font-family: Pitagon Sans Text;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0em;
+  color: black;
+}
+
+.e-schedule .e-vertical-view .e-day-wrapper .e-appointment .e-time {
+  margin-left: 16px !important;
+  font-family: Pitagon Sans Text;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0em;
+  color: black;
+}
+
+/*-------------------------------------*/

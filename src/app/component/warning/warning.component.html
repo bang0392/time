@@ -1,0 +1,8 @@
+<app-navbar></app-navbar>
+
+<div class="container-fluid">
+    <div class="success-notification pt-5">
+        <h3 class="text-success" *ngIf="this.errorCode == '200'">~ {{ message }} ~</h3>
+        <h3 class="text-danger" *ngIf="this.errorCode != '200'">~ {{ message }} ~</h3>
+    </div>
+</div>

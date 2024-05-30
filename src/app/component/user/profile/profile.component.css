@@ -1,0 +1,131 @@
+.content {
+    margin-top: 110px;
+    margin-left: 400px;
+    height: 700px;
+    width: 900px;
+    background-color: rgba(255, 255, 255, 1);
+    border: solid 1px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    z-index: 10;
+}
+
+.title {
+    margin: 20px 0px 0px 40px;
+    font-family: Pitagon Sans Text;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 38px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+.avatar img {
+    height: 168px;
+    width: 168px;
+    margin: 40px 80px 40px 40px;
+    border-radius: 50%;
+}
+
+.fullname-mail h1 {
+    margin-top: 86px;
+    font-family: "Pitagon Sans Text";
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 38px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(0, 0, 0, 1);
+
+}
+
+.fullname-mail label {
+    color: rgba(83, 89, 119, 1);
+    font-family: "Pitagon Sans";
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0em;
+
+}
+
+.field_title {
+    height: 55px;
+    display: flex;
+    margin-left: 30px;
+    align-items: center;
+    font-family: "Pitagon Sans";
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 38px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 20px;
+    position: relative;
+}
+.input_field_name {
+    margin-left: 40px;
+    height: 50px;
+    width: 550px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding-left: 15px;
+
+}
+
+.input_field_email {
+    margin-left: 40px;
+    height: 50px;
+    width: 550px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding-left: 15px;
+    background-image: url('http://localhost:4200/assets/email.png');
+    background-size: 60px;
+    background-position: calc(100% - 0px) center;
+    background-repeat: no-repeat;
+}
+
+.input_field_date {
+    margin-left: 40px;
+    height: 50px;
+    width: 550px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding-left: 15px;
+}
+
+.select_sex {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin-left: 40px;
+    height: 50px;
+    width: 550px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    appearance: none;
+    background-image: url('http://localhost:4200/assets/icondropdown.png');
+    background-size: 40px;
+    background-position: calc(100% - 5px) center;
+    background-repeat: no-repeat;
+    padding-right: 30px;
+}
+
+.button_save button {
+    height: 40px;
+    width: 87px;
+    border: none;
+    background: rgba(3, 152, 85, 1);
+    border-radius: 5px;
+    float: right;
+    margin-right: 40px;
+    color: rgba(255, 255, 255, 1);
+
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    margin-right: 5px;
+    width: 5%;
+    color: rgb(17, 51, 218, 0.5);
+    font-size: 18px;
+  }

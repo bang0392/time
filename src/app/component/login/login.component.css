@@ -1,0 +1,273 @@
+/*.login {*/
+/*  display: flex;*/
+/*  justify-content: center;*/
+/*  align-items: center;*/
+/*  height: 100vh;*/
+/*  background-color: #EEE;*/
+/*}*/
+
+/*.header {*/
+/*  display: flex;*/
+/*  height: 52px;*/
+/*  padding: 0px 20px;*/
+/*  justify-content: space-between;*/
+/*  align-items: center;*/
+/*  background: #FFF;*/
+/*  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);*/
+/*}*/
+
+/*.menu {*/
+/*  display: flex;*/
+/*  width: 172px;*/
+/*  height: 49px;*/
+/*  flex-shrink: 0;*/
+/*}*/
+
+/*.menu img {*/
+/*  display: inline-flex;*/
+/*  height: 49px;*/
+/*  padding: 12px 12px 12px 12px;*/
+/*  justify-content: center;*/
+/*  align-items: center;*/
+/*  gap: 30px;*/
+/*  flex-shrink: 0;*/
+/*}*/
+
+/*.menu p {*/
+/*  display: flex;*/
+/*  width: 127px;*/
+/*  height: 38px;*/
+/*  padding-top: 5px;*/
+/*  justify-content: center;*/
+/*  align-items: flex-start;*/
+/*  gap: 10px;*/
+/*  flex-shrink: 0;*/
+/*  color: #039855;*/
+/*  font-family: Inter;*/
+/*  font-size: 25px;*/
+/*  font-style: normal;*/
+/*  font-weight: 700;*/
+/*  line-height: 40px; !* 160% *!*/
+/*}*/
+
+/*.menu p:hover{*/
+/*  cursor: pointer;*/
+/*}*/
+
+/*.flag {*/
+/*  display: flex;*/
+/*  width: 81px;*/
+/*  justify-content: center;*/
+/*  align-items: center;*/
+/*  gap: 10px;*/
+/*  flex-shrink: 0;*/
+/*}*/
+
+/*.flag img:hover {*/
+/*  cursor: pointer;*/
+/*}*/
+
+/*.frame {*/
+/*  display: flex;*/
+/*  width: 761px;*/
+/*  height: 479px;*/
+/*  padding: 48px 94px;*/
+/*  flex-direction: column;*/
+/*  justify-content: center;*/
+/*  align-items: center;*/
+/*  gap: 40px;*/
+/*  border-radius: 20px;*/
+/*  border: 1px solid rgba(0, 0, 0, 0.30);*/
+/*  background: #FFF;*/
+/*  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);*/
+/*}*/
+
+/*.frame_text {*/
+/*  !*display: flex;*!*/
+/*  !*flex-direction: column;*!*/
+/*  !*justify-content: center;*!*/
+/*  !*align-items: center;*!*/
+/*  !*gap: 20px;*!*/
+/*  display: flex;*/
+/*  width: 258px;*/
+/*  height: 111px;*/
+/*  flex-direction: column;*/
+/*  justify-content: center;*/
+/*  align-items: center;*/
+/*  gap: 30px;*/
+/*}*/
+
+/*.frame_text_2 {*/
+/*  display: flex;*/
+/*  width: 187px;*/
+/*  justify-content: center;*/
+/*  align-items: center;*/
+/*}*/
+
+/*.title_one {*/
+/*  display: flex;*/
+/*  width: 162px;*/
+/*  height: 38px;*/
+/*  justify-content: center;*/
+/*  align-items: flex-start;*/
+/*  gap: 10px;*/
+/*  color: #039855;*/
+/*  font-family: Inter;*/
+/*  font-size: 30px;*/
+/*  font-style: normal;*/
+/*  font-weight: 700;*/
+/*  line-height: 40px; !* 133.333% *!*/
+/*}*/
+
+/*.frame_text div {*/
+/*  display: block;*/
+/*  width: 187px;*/
+/*  justify-content: center;*/
+/*  align-items: center;*/
+/*}*/
+
+/*.title_two {*/
+/*  display: flex;*/
+/*  padding-bottom: 4px;*/
+/*  justify-content: center;*/
+/*  align-items: center;*/
+/*  color: rgba(0, 0, 0, 0.80);*/
+/*  font-family: Pitagon Sans Text;*/
+/*  font-size: 36px;*/
+/*  font-style: normal;*/
+/*  font-weight: 400;*/
+/*  line-height: 38px; !* 105.556% *!*/
+/*}*/
+
+/*.title_three {*/
+/*  text-align: center;*/
+/*  height: 27px;*/
+/*  align-items: center;*/
+/*  gap: 10px;*/
+/*  color: #000;*/
+/*  font-family: Pitagon Sans Text;*/
+/*  font-size: 15px;*/
+/*  font-style: normal;*/
+/*  font-weight: 400;*/
+/*  line-height: 38px; !* 253.333% *!*/
+/*}*/
+
+/*.button_login {*/
+/*  display: flex;*/
+/*  height: 70px;*/
+/*  padding: 10px 16px;*/
+/*  justify-content: center;*/
+/*  align-items: center;*/
+/*  gap: 12px;*/
+/*  align-self: stretch;*/
+/*  border-radius: 8px;*/
+/*  border: 1px solid rgba(0, 0, 0, 0.30);*/
+/*  background: #FFF;*/
+/*  box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.25);*/
+/*  color: #344054;*/
+/*  font-family: Pitagon Sans Text;*/
+/*  font-size: 20px;*/
+/*  font-style: normal;*/
+/*  font-weight: 600;*/
+/*  line-height: 24px; !* 120% *!*/
+/*}*/
+
+/*.button_login img {*/
+/*  width: 46px;*/
+/*  height: 46px;*/
+/*}*/
+
+/*.flag img {*/
+/*  cursor: pointer;*/
+/*  border: 2px solid transparent;*/
+/*}*/
+
+/*.flag img.active {*/
+/*  border-color: #007bff;*/
+/*}*/
+
+.login {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  background: #FCFCFC;
+}
+
+.img_login {
+  width: 634px;
+  height: 482px;
+  flex-shrink: 0;
+}
+
+.text_login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text_and_support {
+  display: flex;
+  width: 398px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.title {
+  align-self: stretch;
+  color: #43AA47;
+  text-align: center;
+  font-family: "Pitagon Sans Text";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px; /* 133.333% */
+}
+
+.content_login {
+  align-self: stretch;
+  color: #858585;
+  text-align: center;
+  font-family: "Pitagon Sans Text";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+}
+
+.btn_login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 63px;
+}
+
+.button_login {
+  display: flex;
+  width: 303px;
+  height: 61px;
+  padding: 10px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  border-radius: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.30);
+  background: #FFF;
+  color: #344054;
+  font-family: "Pitagon Sans Text";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 120% */
+}
+
+.button_login img {
+  width: 31px;
+  height: 31px;
+  flex-shrink: 0;
+}

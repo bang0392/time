@@ -1,0 +1,131 @@
+.container {
+  width: 1440px;
+  height: 1031px;
+  margin: 0 auto;
+}
+
+.signup {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1440px;
+  height: 1020px;
+  top: 2px;
+  gap: 32px;
+  padding: 96px 32px 48px 32px;
+}
+
+.sidebar {
+  left: 0;
+  width: 102px;
+  height: 1022px;
+  background-color: #333;
+  color: #fff;
+}
+
+/* CSS cho navbar */
+.navbar {
+  width: 1338px;
+  height: 90px;
+  left: 102px;
+}
+
+.content-signup {
+  width: 320px;
+  height: 618px;
+  gap: 32px;
+}
+
+.header {
+  width: 360px;
+  height: 130px;
+  gap: 24px;
+  text-align: center;
+}
+
+.img {
+  text-align: center;
+}
+
+.text-and-supporting-text {
+  width: 360px;
+  height: 74px;
+  gap: 12px;
+}
+
+.text {
+  height: 38px;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 38px;
+  align-items: center;
+}
+
+.supporting-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  align-items: center;
+}
+
+.content {
+  width: 360px;
+  height: 404px;
+  gap: 24px;
+}
+
+.notify-password {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.action {
+  width: 360px;
+  height: 104px;
+  gap: 16px;
+}
+
+.action-button {
+  border-color: #7f56d9;
+  width: 360px;
+  height: 44px;
+  gap: 8px;
+  background-color: #6dad04;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.social-button {
+  border-radius: 8px;
+  border-color: #d0d5dd;
+  width: 360px;
+  height: 44px;
+  background-color: #ffffff;
+  color: #344054;
+  font-weight: 600;
+}
+
+.suggest {
+  margin-top: 50px;
+  width: 360px;
+  height: 20px;
+  gap: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-muted {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.text-row {
+  text-decoration: none;
+  color: #6dad04;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+}

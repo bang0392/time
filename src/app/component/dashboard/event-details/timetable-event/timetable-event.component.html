@@ -1,0 +1,8 @@
+<div mat-dialog-content class="mat-typography">
+  <div *ngFor="let timetable of timetables">
+    <label>
+      <input type="radio" name="timetable" [value]="timetable" />
+      {{ timetable.name }}
+    </label>
+  </div>
+</div>

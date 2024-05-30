@@ -1,0 +1,211 @@
+<!-- <div style="width: 506px; max-height: 93%; background: white; border-radius: 20px" id="event-details-container"
+  class="event-details-overlay">
+  <div class="box">
+    <div class="group">
+      <div class="overlap-group">
+        <img
+          class="arrow-left"
+          src="../../../assets/arrow-left.png"
+          (click)="close()"
+        />
+        <div class="text-wrapper" *ngIf="id != null">
+          {{ "Update_event" | translate }}
+        </div>
+        <div class="text-wrapper" *ngIf="id == null">
+          {{ "Add_event" | translate }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="event-content">
+    <div class="event-content-items">
+      <label for="title">{{ 'Title' | translate }}</label>
+      <input [(ngModel)]="title" type="text" class="form-control" id="title" placeholder="--Title--">
+    </div>
+
+    <div class="event-content-items">
+      <label for="startDate">{{ 'Start_date' | translate }}</label>
+      <input [(ngModel)]="startDate" type="datetime-local" class="form-control" id="startDate" placeholder="--date--">
+    </div>
+
+    <div class="event-content-items">
+      <label for="endDate">{{ 'End_date' | translate }}</label>
+      <input [(ngModel)]="endDate" type="datetime-local" class="form-control" id="endDate" placeholder="--date--">
+    </div>
+
+
+    <div class="event-content-items">
+      <label for="RepeatEvent">{{ 'Repeat Event' | translate }}</label>
+      <select [(ngModel)]="endDate" class="form-control" id="repeatEvent">
+        <option value="daily">{{ 'Daily' | translate }}</option>
+        <option value="weekly">{{ 'Weekly' | translate }}</option>
+      </select>
+    </div>
+    <div class="event-content-items">
+      <label for="Description">{{ 'Description' | translate }}</label>
+      <textarea [(ngModel)]="description" class="form-control" id="Description" placeholder="--Description--"></textarea>
+    </div>
+    <div class="row">
+      <div class="item col-6">
+        <div class="item-button">
+          <button class="col-lg-6 btn btn-light" type="button" (click)="close()" style="margin-right: 10px;">{{
+            'Cancel'| translate }}</button>
+          <button class="col-lg-6 btn btn-success btn-update" type="button" *ngIf="id != ''"(click)="updateEvent()">{{
+            'Update' | translate}}</button>
+          <button class="col-lg-6 btn btn-success btn-add" type="button" *ngIf="id == ''">{{
+            'Create' | translate}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div
+  style="width: 535px; max-height: 93%; background: white; border-radius: 20px"
+  id="event-details-container"
+  class="event-details-overlay"
+>
+  <div class="box">
+    <div class="group">
+      <div class="overlap-group">
+        <img
+          class="arrow-left"
+          src="../../../assets/arrow-left.png"
+          (click)="close()"
+        />
+        <div class="text-wrapper" *ngIf="id != null">
+          {{ "Update_event" | translate }}
+        </div>
+        <div class="text-wrapper" *ngIf="id == null">
+          {{ "Add_event" | translate }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="div1">
+    <div class="overlap-group">
+      <div>
+        <label for="title">{{ "Title" | translate }}</label>
+        <span style="color: red"> *</span>
+      </div>
+      <input
+        [(ngModel)]="title"
+        type="text"
+        class="form-control"
+        id="title"
+        placeholder="-- Title --"
+      />
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-1">
+        <img class="icon-clock" src="../../../assets/icon-clock.png" />
+      </div>
+      <div class="col-4">
+        <label class="date-text" for="fromTime" (click)="openScheduleModal()">
+          {{ "Chọn thời khoá biểu" | translate }}
+        </label>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-1">
+        <img class="icon-clock" src="../../../assets/icon-clock.png" />
+      </div>
+      <div class="col-4">
+        <label class="date-text" for="fromTime">{{
+          "Bắt đầu & kết thúc" | translate
+        }}</label>
+      </div>
+    </div>
+    <br />
+    <div class="overlap-group">
+      <div>
+        <label for="startDate">{{ "Start_date" | translate }}</label>
+        <span style="color: red"> *</span>
+      </div>
+      <input
+        [(ngModel)]="startDate"
+        type="datetime-local"
+        class="form-control"
+        id="startDate"
+        placeholder="date"
+      />
+    </div>
+    <br />
+    <div class="overlap-group">
+      <div>
+        <label for="endDate">{{ "End_date" | translate }}</label>
+        <span style="color: red"> *</span>
+      </div>
+      <input
+        [(ngModel)]="endDate"
+        type="datetime-local"
+        class="form-control"
+        id="endDate"
+        placeholder="date"
+      />
+    </div>
+    <br />
+    <div class="overlap-group">
+      <div>
+        <label for="title">{{ "Địa điểm / Phòng học" | translate }}</label>
+      </div>
+      <input
+        [(ngModel)]="title"
+        type="text"
+        class="form-control"
+        id="title"
+        placeholder="Thêm địa điểm"
+      />
+    </div>
+    <br />
+    <div class="overlap-group">
+      <label for="description">{{ "Mô tả" | translate }}</label>
+      <textarea
+        style="height: 88px"
+        [(ngModel)]="description"
+        type="text"
+        class="form-control"
+        id="description"
+        placeholder="Thêm nội dung mô tả"
+      ></textarea>
+    </div>
+    <div class="overlap-group row justify-content-end" style="padding-top: 5%">
+      <div class="row col-6">
+        <button
+          class="col-lg-5 btn btn-light mr-4"
+          type="button"
+          (click)="close()"
+          *ngIf="id == null"
+        >
+          {{ "Cancel" | translate }}
+        </button>
+        <button
+          class="col-lg-5 btn btn-light mr-4"
+          type="button"
+          (click)="deleteEvent()"
+          *ngIf="id != null"
+        >
+          {{ "Delete" | translate }}
+        </button>
+        <button
+          class="col-lg-5 btn btn-success"
+          type="button"
+          (click)="updateEvent()"
+          *ngIf="id != null"
+        >
+          {{ "Update" | translate }}
+        </button>
+        <button
+          class="col-lg-5 btn btn-success"
+          type="button"
+          (click)="addEvent()"
+          *ngIf="id == null"
+        >
+          {{ "Add" | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

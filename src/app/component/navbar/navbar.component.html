@@ -1,0 +1,355 @@
+<div class="header" style="z-index: 200;">
+  <img src="../../../assets/menu.png" (click)="toggleMenu()" class="menu-icon"
+    style="margin-left: 24px;width: 24px; height: 24px;">
+  <div class="logo">
+    <img src="../../../assets/Logo.png" class="timetable-icon" style="margin-left: 35px;margin-right: 5px;">
+    <p class="timetable-text">Thời khóa biểu</p>
+  </div>
+
+  <div class="left-item">
+
+  </div>
+  <div class="right-item">
+    <form *ngIf="isSearch" action="" class="search-box">
+      <input class="search" type="text" placeholder="Tìm kiếm" [(ngModel)]="searchValueInput" (input)="onInputChange()"
+        (click)="showAutocomplete()" (blur)="hideAutocomplete()">
+      <img src="../../../assets/navbar-icon/Search-Icon.png" alt="Search-Icon" class="search-icon">
+    </form>
+
+    <div class="autocomplete_search" *ngIf="isAutocompleteVisible">
+      <div class="conten-search">
+        <div class="search-event" *ngIf="searchEventResult.length > 0">
+          <label for="" class="title-text-event">Event ( {{searchEventResult.length}} )</label>
+          <div class="row timetable-item-search" *ngFor="let result of searchEventResult"
+            (mwlClick)="handleEventClick(result.id)">
+            <div class="timetable-color-search col-1" [style.background-color]="result.color"></div>
+            <div class="content-event col-9">
+              <p class="timetable-name-search-event">{{ result.title}}</p>
+              <p class="date-start-end">Time : {{ result.endDateFormat }} - {{ result.startDateFormat }} </p>
+            </div>
+          </div>
+        </div>
+        <div class="search-event" *ngIf="searchTimeTableResult.length > 0">
+          <label for="" class="title-text-event">TimeTable ( {{searchTimeTableResult.length}} )</label>
+          <div class="row timetable-item-search" *ngFor="let result of searchTimeTableResult">
+            <div class="timetable-color-search col-1" [style.background-color]="result.color"></div>
+            <div class="content-timetable col-6">
+              <p class="search-timetable-name">{{ result.name}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="no-result" *ngIf="searchEventResult.length === 0 && searchTimeTableResult.length === 0">
+          <label for="">Không có kết quả</label>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="notification-tab" *ngIf="isSearch">
+      <img src="../../../assets/notifications.png" class="calendar-icon" style="width: 39px; height: 39px;"
+        alt="calendar-icon">
+      <span class="notification-count">{{ countUnread }}</span>
+    </div>
+
+    <div class="notification-tab2" *ngIf="isAllN">
+      <img src="../../../assets/notifications.png" class="calendar-icon" style="width: 39px; height: 39px;"
+        alt="calendar-icon">
+      <span class="notification-count">{{ countUnread }}</span>
+    </div>
+
+    <div class="popupProfile" *ngIf="isPopupVisible">
+      <div class="header-popup">
+        <img [src]="avatarUrl" class="avatar-img-popup">
+        <div class="user-details-popup">
+          <label for="" class="fullname-popup">Hoàng </label>
+          <p class="email-popup">hoang@gmail.com</p>
+        </div>
+      </div>
+
+      <div style="height: 1px; width: 100%; background-color: rgba(0, 0, 0, 0.2);"></div>
+      <div class="footer-popup">
+        <div class="profile-tab">
+          <img src="../../../assets/navbar-icon/user.png" alt="Search-Icon" class="profile-icon">
+          <label for="" class="profile-text">Proflie</label>
+        </div>
+        <div class="logout-tab">
+          <img src="../../../assets/navbar-icon/logout.png" alt="Search-Icon" class="logout-icon">
+          <label for="" class="logout-text">Proflie</label>
+        </div>
+      </div>
+    </div>
+
+    <img [src]="avatarUrl" class="avatar-img" (click)="togglePopup()" *ngIf="isSearch">
+    <img [src]="avatarUrl" class="avatar-img1" (click)="togglePopup()" *ngIf="isAllN">
+  </div>
+</div>
+
+
+<div class="menu-all" [ngClass]="{'collapsed': isMenuCollapsed}" *ngIf="!isMenuHidden">
+  <div class="menu" [ngClass]="{'collapsed': isMenuCollapsed}">
+    <div class="calendar-tab" (click)="moveToCalendar()"
+      [ngClass]="{'collapsed': isMenuCollapsed, 'active': selectedTabSlideBar === 'calendar'}">
+      <img src="../../../assets/add.png" style="width: 24px; height: 24px;margin-left: 12px;" alt="calendar-icon">
+      <p class="text" [ngClass]="{'active': selectedTabSlideBar === 'calendar'}" *ngIf="!isMenuCollapsed"
+        (click)="addTimeTable()">Thêm thời khóa
+        biểu
+      </p>
+    </div>
+
+    <div *ngFor="let timetable of recentTimetables" class="notification-tab">
+      <div class="check_box" [style.background]="timetable.color"></div>
+      <p class="text_1">{{ timetable.name }}</p>
+      <div class="vertical-dots" (click)="openDialog($event, timetable)">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+
+
+
+
+    <br>
+
+
+    <!-- <br>
+    <div>Fixx cứng</div>
+    <br>
+    <div class="notification-tab">
+      <div class="check_box"></div>
+      <p class="text_1">Timetable name</p>
+      <div class="vertical-dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+
+    <div class="notification-tab">
+      <div class="check_box"></div>
+      <p class="text_1">Timetable name</p>
+      <div class="vertical-dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+
+    <div class="notification-tab">
+      <div class="check_box"></div>
+      <p class="text_1">Timetable name</p>
+      <div class="vertical-dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+
+    <div class="notification-tab">
+      <div class="check_box"></div>
+      <p class="text_1">Timetable name</p>
+      <div class="vertical-dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+
+    <div class="notification-tab">
+      <div class="check_box"></div>
+      <p class="text_1">Timetable name</p>
+      <div class="vertical-dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div> -->
+
+    <div class="notification-tab" style="margin-top: 10px;">
+      <div class="hien_thi_them">
+        Hiển thị thêm
+      </div>
+    </div>
+    <div class="notification-tab" style="position: absolute; top: 67%;" (click)="viewStorage()">
+      <div>
+        <img src="../../../assets/archive.png" alt="Search-Icon"
+          style="width: 24px;height: 24px;margin-left: 44px;margin-top: -5px;">
+        <span class="luu_tru">Lưu trữ</span>
+      </div>
+    </div>
+
+    <div class="notification-tab1" style="position: absolute; top: 77%;" (click)="logut()">
+      <div>
+        <img src="../../../assets/login.png" alt="Search-Icon"
+          style="width: 24px;height: 24px;margin-left: 44px;margin-top: -5px;">
+        <span class="luu_tru">Đăng xuất</span>
+      </div>
+    </div>
+    <div class="notification-tab1" style="position: absolute; top: 85%;">
+      <span style="margin-left: 70px;">Phiên bản 1.0.0</span>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- <div class="row">
+  <div class="col-12">
+    <div class="row">
+      <div class="col-3">
+        <div class="row">
+          <div class="col-1">
+            <img class="icon_menu" src="../../../assets/menu.png">
+          </div>
+          <div class="col-11">
+            <div class="row">
+              <div class="col-4">
+                <img class="icon_logo" src="../../../assets/Logo.png">
+              </div>
+              <div class="col-8">
+                <div class="thoi_khoa_bieu_text">Thời khóa biểu</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-4"></div>
+      <div class="col-3 custom-div">
+        <div class="row">
+          <div class="col-10">
+            <input type="text" class="custom-input" placeholder="Tìm kiếm">
+          </div>
+          <div class="col-2">
+            <img class="icon_tim_kiem" src="../../../assets/search-icon.png">
+          </div>
+        </div>
+      </div>
+      <div class="col-1">
+        <div class="notification-tab" (click)="moveToNotification()"
+          [ngClass]="{'collapsed': isMenuCollapsed, 'active': selectedTabSlideBar === 'notification'}">
+          <img src="../../../assets/notifications.png" class="calendar-icon" style="width: 39px; height: 39px;"
+            alt="calendar-icon">
+          <span class="notification-count">{{ countUnread }}</span>
+        </div>
+      </div>
+      <div class="col-1">
+        <img [src]="avatarUrl" class="avatar-img" (click)="togglePopup()">
+      </div>
+    </div>
+  </div>
+  <div class="col-12" style="margin-top: 10px;">
+    <div class="row">
+      <div class="col-2">
+        <div class="row">
+          <div class="col-12">
+            <div class="nav_bar">
+              <div class="row">
+                <div class="col-2">
+                  <img src="../../../assets/add.png" alt="Ảnh" class="add">
+                </div>
+                <div class="col-10 text">
+                  Thêm thời khóa biểu
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12" style="margin-top: 10px;">
+            <div class="nav_bar_1">
+              <div class="row">
+                <div class="col-2">
+                  <div class="check_box"></div>
+                </div>
+                <div class="col-8 text_1">
+                  Timetable name
+                </div>
+                <div class="col-1">
+                  <img src="../../../assets/3_cham.png" alt="Ảnh" width="25px"
+                    style="margin-left: -15px;margin-top: 10px;">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12" style="margin-top: 10px;">
+            <div class="nav_bar_1">
+              <div class="row">
+                <div class="col-2">
+                  <div class="check_box"></div>
+                </div>
+                <div class="col-8 text_1">
+                  Timetable name
+                </div>
+                <div class="col-1">
+                  <img src="../../../assets/3_cham.png" alt="Ảnh" width="25px"
+                    style="margin-left: -15px;margin-top: 10px;">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12" style="margin-top: 10px;">
+            <div class="nav_bar_1">
+              <div class="row">
+                <div class="col-2">
+                  <div class="check_box"></div>
+                </div>
+                <div class="col-8 text_1">
+                  Timetable name
+                </div>
+                <div class="col-1">
+                  <img src="../../../assets/3_cham.png" alt="Ảnh" width="25px"
+                    style="margin-left: -15px;margin-top: 10px;">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12" style="margin-top: 10px;">
+            <div class="nav_bar_1">
+              <div class="row">
+                <div class="col-2">
+                  <div class="check_box"></div>
+                </div>
+                <div class="col-8 text_1">
+                  Timetable name
+                </div>
+                <div class="col-1">
+                  <img src="../../../assets/3_cham.png" alt="Ảnh" width="25px"
+                    style="margin-left: -15px;margin-top: 10px;">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12" style="margin-top: 10px;">
+            <div class="nav_bar_1">
+              <div class="row">
+                <div class="col-2">
+                  <div class="check_box"></div>
+                </div>
+                <div class="col-8 text_1">
+                  Timetable name
+                </div>
+                <div class="col-1">
+                  <img src="../../../assets/3_cham.png" alt="Ảnh" width="25px"
+                    style="margin-left: -15px;margin-top: 10px;">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 " style="margin-top: 10px;">
+            <div class="hien_thi_them">
+              Hiển thị thêm
+            </div>
+          </div>
+          <div class="col-12 " style="margin-top: 20px;">
+            <img src="../../../assets/luu_tr_1-removebg-preview.png" width="90%" style="margin-left: 5px;">
+          </div>
+          <div class="col-12 " style="margin-top: 20px;">
+            <img src="../../../assets/dang_xuat-removebg-preview.png" width="90%" style="margin-top: -30px;">
+          </div>
+          <div class="col-12 " style="~margin-top: 20px;text-align: center;">
+            Phiên bản 1.0.0
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

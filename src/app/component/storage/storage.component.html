@@ -1,0 +1,45 @@
+<div style="width: 535px; max-height: 93%; background: #E2E2E2; border-radius: 20px" id="event-details-container"
+     class="event-details-overlay">
+  <div class="box">
+    <div class="group">
+      <div class="overlap-group">
+        <img class="arrow-left" src="../../../assets/arrow-left.png" (click)="close()"/>
+        <div class="text-wrapper">
+          Lưu trữ
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="frame" *ngFor="let timetable of timetables">
+    <div class="item" (click)="getEventByTimetableId(timetable.id)">
+      <div style="width: 18px;
+height: 18px;
+flex-shrink: 0;
+border-radius: 5px;
+background: {{timetable.color}};"></div>
+      <p style="margin-top: 15px;">{{timetable.name}}</p>
+      <div class="dropdown">
+        <img src="assets/more_vert.png" data-bs-toggle="dropdown" aria-expanded="false">
+        <ul class="dropdown-menu" style="
+border-radius: 10px;
+background: #FFF;">
+          <div style="display: flex;
+padding: 10px;
+align-items: center;
+gap: 10px;
+flex: 1 0 0;
+align-self: stretch;">
+            <img src="assets/delete_icon.png">
+            <button class="dropdown-item" (click)="deleteStorage(timetable.id)" style="color: #F00;
+              font-family: Pitagon Sans Text;
+              font-size: 15px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: 150%;">Xóa
+            </button>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
